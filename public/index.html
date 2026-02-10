@@ -1,12 +1,70 @@
 <!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Hello, World!</title>
-	</head>
-	<body>
-		<h1 id="heading">Hello, World!</h1>
-		<p>This page comes from a static asset stored at `public/index.html` as configured in `wrangler.jsonc`.</p>
-	</body>
+<html lang="sr">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Mladen Stanimirović</title>
+
+        <link rel="stylesheet" href="/styles.css" />
+    </head>
+
+    <body>
+        <main class="page">
+            <!-- HERO -->
+            <section class="hero">
+                <h1 class="hero__title">Mladen Stanimirović</h1>
+
+                <div class="hero__meta">
+                    <p>Computer Science student @ Singidunum University</p>
+                    <p>Novi Sad, Serbia</p>
+                    <p>Currently studying backend engineering</p>
+                    <p>JVM internals, databases, system design</p>
+                </div>
+
+                <div class="hero__links">
+                    <a
+                        class="link"
+                        href="https://github.com/mstanimirovic"
+                        target="_blank"
+                        rel="noreferrer"
+                    >
+                        github
+                        <span class="link__arrow">&gt;</span> mstanimirovic
+                    </a>
+                    <a class="link" href="mailto:mladen@stanimirovic.org">
+                        email
+                        <span class="link__arrow">&gt;</span>
+                        mladen@stanimirovic.org
+                    </a>
+                </div>
+
+                <div class="hero__footer">
+                    <div class="muted">&gt; building things quietly</div>
+                </div>
+            </section>
+
+            <!-- PROJECTS -->
+            <section class="projects" aria-label="Projects">
+                <div class="section-title">
+                    <span class="prompt">&gt;</span> projects
+                </div>
+
+                <div class="projects__list" id="projects"></div>
+
+                <div class="projects__footer">
+                    <span class="prompt">&gt;</span>
+                    <a
+                        class="link link--muted"
+                        href="https://github.com/mstanimirovic"
+                        target="_blank"
+                        rel="noreferrer"
+                    >
+                        more on github
+                    </a>
+                </div>
+            </section>
+        </main>
+
+        <script src="app.js" defer></script>
+    </body>
 </html>

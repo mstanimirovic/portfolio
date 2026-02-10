@@ -1,0 +1,233 @@
+:root {
+    --bg: #07090c;
+    --fg: #cfe9e7;
+    --muted: rgba(207, 233, 231, 0.65);
+
+    --accent: #b9fff3; /* ime / naglasci */
+    --link: #b29cff; /* github/email */
+    --link2: #8aa8ff; /* sekundarni */
+
+    --grid: rgba(255, 255, 255, 0.06);
+    --grid2: rgba(255, 255, 255, 0.035);
+
+    --max: 980px;
+    --content: 820px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font-family:
+        ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+        "Liberation Mono", "Courier New", monospace;
+
+    /* grid background */
+    background-image:
+        linear-gradient(to right, var(--grid2) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--grid2) 1px, transparent 1px),
+        radial-gradient(closest-side, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7));
+    background-size:
+        48px 48px,
+        48px 48px,
+        100% 100%;
+    background-position: center, center, center;
+}
+
+.page {
+    min-height: 100%;
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 72px 24px 96px;
+}
+
+/* HERO (centriran) */
+.hero {
+    text-align: center;
+    margin: 0 auto 64px;
+    max-width: 760px;
+}
+
+.hero__title {
+    margin: 0 0 22px;
+    font-size: clamp(36px, 4vw, 56px);
+    letter-spacing: 0.5px;
+    color: var(--accent);
+    text-shadow:
+        0 0 18px rgba(185, 255, 243, 0.12),
+        0 0 32px rgba(185, 255, 243, 0.08);
+}
+
+.hero__meta p {
+    margin: 6px 0;
+    color: var(--muted);
+    font-size: 18px;
+    line-height: 1.35;
+}
+
+.hero__links {
+    margin-top: 26px;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.link {
+    color: var(--link);
+    text-decoration: none;
+    display: inline-flex;
+    gap: 10px;
+    align-items: center;
+    font-size: 20px;
+    padding: 6px 10px;
+    border-radius: 8px;
+}
+
+.link:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.link__arrow {
+    color: rgba(255, 255, 255, 0.45);
+}
+
+.hero__footer {
+    margin-top: 26px;
+    display: grid;
+    gap: 14px;
+    justify-items: center;
+}
+
+.muted {
+    color: rgba(185, 255, 243, 0.65);
+    font-size: 16px;
+}
+
+/* PROJECTS (left aligned, content width) */
+.projects {
+    max-width: var(--content);
+    margin: 0 auto;
+    padding-top: 28px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.section-title {
+    color: rgba(185, 255, 243, 0.75);
+    font-size: 18px;
+    letter-spacing: 0.2px;
+    margin-bottom: 22px;
+    display: flex;
+    gap: 10px;
+    align-items: baseline;
+}
+
+.prompt {
+    color: rgba(185, 255, 243, 0.85);
+}
+
+.projects__list {
+    display: grid;
+    gap: 22px;
+}
+
+/* “terminal card” bez teških okvira */
+.project {
+    padding: 14px 14px 16px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(2px);
+}
+
+.project__head {
+    display: flex;
+    gap: 10px;
+    align-items: baseline;
+    margin-bottom: 8px;
+}
+
+.project__name {
+    margin: 0;
+    font-size: 20px;
+    color: var(--accent);
+}
+
+.project__desc {
+    margin: 0 0 8px;
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1.45;
+}
+
+.project__stack {
+    margin: 0 0 12px;
+    color: rgba(138, 168, 255, 0.75);
+    font-size: 14px;
+}
+
+.project__links {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 10px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.2);
+    color: rgba(207, 233, 231, 0.85);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.pill:hover {
+    border-color: rgba(185, 255, 243, 0.3);
+    color: rgba(185, 255, 243, 0.9);
+}
+
+.projects__footer {
+    margin-top: 22px;
+    display: flex;
+    gap: 10px;
+    align-items: baseline;
+}
+
+.projects__footer a {
+    font-size: 18px;
+    letter-spacing: 0.2px;
+}
+
+.link--muted {
+    color: var(--link2);
+}
+
+/* Mobile tuning */
+@media (max-width: 520px) {
+    .page {
+        padding: 56px 18px 80px;
+    }
+    .hero__meta p {
+        font-size: 16px;
+    }
+    .link {
+        font-size: 18px;
+    }
+    .project {
+        padding: 12px;
+    }
+}
