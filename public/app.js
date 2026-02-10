@@ -1,6 +1,6 @@
 const GITHUB_USER = "mstanimirovic";
 
-const PROJECTS = ["berba", "skocko"];
+const PROJECTS = ["portfolio", "berba", "skocko"];
 
 const CACHE_KEY = "projects_cache";
 const CACHE_TTL = 60 * 60 * 1000;
@@ -39,7 +39,7 @@ async function loadProjects() {
   if (!container) return;
 
   const cached = getCachedProjects();
-  if (cached) {
+  if (cached && cached.length === PROJECTS.length) {
     cached.forEach((repo) => {
       container.appendChild(createProjectTemplate(repo));
     });
