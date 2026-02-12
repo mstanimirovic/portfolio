@@ -46,6 +46,7 @@ body {
 .page {
     min-height: 100%;
     max-width: var(--max);
+    position: relative;
     margin: 0 auto;
     padding: 72px 24px 96px;
 }
