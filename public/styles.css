@@ -150,9 +150,11 @@ body {
     background: rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(255, 255, 255, 0.06);
     backdrop-filter: blur(2px);
+    cursor: default;
 }
 
-.project__head {
+.project__head a {
+    text-decoration: none;
     display: flex;
     gap: 10px;
     align-items: baseline;
@@ -160,22 +162,27 @@ body {
 }
 
 .project__name {
-    margin: 0;
+    margin: 0 0 5px 0;
     font-size: 20px;
     color: var(--accent);
 }
 
 .project__desc {
-    margin: 0 0 8px;
+    cursor: default;
+    margin: 0 0 10px;
     color: var(--muted);
     font-size: 16px;
     line-height: 1.45;
 }
 
 .project__stack {
-    margin: 0 0 12px;
-    color: rgba(138, 168, 255, 0.75);
-    font-size: 14px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-content: space-evenly;
+    height: fit-content;
 }
 
 .project__links {
@@ -184,10 +191,9 @@ body {
     flex-wrap: wrap;
 }
 
-.pill {
-    display: inline-flex;
-    align-items: center;
-    padding: 6px 10px;
+.topic {
+    margin: 0;
+    padding: 7px 10px;
     border-radius: 999px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     background: rgba(0, 0, 0, 0.2);
@@ -196,7 +202,8 @@ body {
     font-size: 14px;
 }
 
-.pill:hover {
+.topic:hover {
+    cursor: default;
     border-color: rgba(185, 255, 243, 0.3);
     color: rgba(185, 255, 243, 0.9);
 }
@@ -208,13 +215,14 @@ body {
     align-items: baseline;
 }
 
-.projects__footer a {
-    font-size: 18px;
-    letter-spacing: 0.2px;
-}
-
 .link--muted {
     color: var(--link2);
+}
+
+.arrow {
+    font-size: 14px;
+    color: lightblue;
+    text-decoration: none;
 }
 
 /* Mobile tuning */

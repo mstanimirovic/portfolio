@@ -77,26 +77,33 @@ function createProjectTemplate(repo) {
   const article = document.createElement("article");
   article.className = "project";
 
-  article.innerHTML = `
+  let html = `
     <div class="project__head">
-      <span class="prompt">#</span>
-      <h3 class="project__name">${repo.name}</h3>
+      <a href="${repo.html_url}" target="_blank" rel="noreferrer">
+        <span class="prompt">#</span>
+        <h3 class="project__name">${repo.name}</h3>
+        <span class="arrow">
+          &#8599;
+        </span>
+      </a>
     </div>
 
     <p class="project__desc">
       ${repo.description ?? "No description provided."}
     </p>
-
-    <p class="project__stack">
-      ${formatTopics(repo.topics)}
-    </p>
-
-    <div class="project__links">
-      <a class="pill" href="${repo.html_url}" target="_blank" rel="noreferrer">
-        github
-      </a>
-    </div>
   `;
+
+  const topics = repo.topics.map((t) => t.replace(/-/g, " "));
+
+  html = html.concat(`<div class="project__stack">`);
+  for (const topic in topics) {
+    html = html.concat(`
+      <p class="topic">${topics[topic]}</p>
+    `);
+  }
+  html = html.concat(`</div>`);
+
+  article.innerHTML = html;
 
   return article;
 }
