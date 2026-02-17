@@ -21,55 +21,103 @@
                 "sameAs": ["https://github.com/mstanimirovic"]
             }
         </script>
+        <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.21/vendor/three.r119.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/tengbao/vanta@master/dist/vanta.net.min.js"></script>
     </head>
 
-    <body>
-        <main class="page">
+    <body id="#background">
+        <script src="https://cdn.jsdelivr.net/npm/tsparticles"></script>
+        <div id="tsparticles"></div>
+
+        <header role="banner">
+            <h1>Mladen Stanimirović</h1>
+            <nav aria-label="Primary">
+                <a class="motion-interactive" href="/">home</a>
+                <a href="/projects">projects</a>
+                <a href="/blog">blog</a>
+            </nav>
+        </header>
+
+        <main>
             <!-- HERO -->
             <section class="hero">
-                <h1 class="hero__title">Mladen Stanimirović</h1>
+                <p>Software Engineering student @ Singidunum University</p>
+                <p>
+                    Working across backend, frontend, databases, DevOps, and
+                    mobile development, with a primary focus on backend
+                    architecture and systems design.
+                </p>
+            </section>
 
-                <div class="hero__meta">
-                    <p>Software Engineering student @ Singidunum University</p>
-                    <p>Novi Sad, Serbia</p>
-                    <p>Currently studying backend engineering</p>
-                    <p>JVM internals, databases, system design</p>
-                </div>
+            <section class="section" id="skills">
+                <h2 class="section-title">Skills</h2>
 
-                <div class="hero__links">
-                    <a
-                        class="link"
-                        href="https://github.com/mstanimirovic"
-                        target="_blank"
-                        rel="noreferrer"
-                    >
-                        github
-                        <span class="link__arrow">&gt;</span> mstanimirovic
-                    </a>
-                    <a class="link" href="mailto:mladen@stanimirovic.org">
-                        email
-                        <span class="link__arrow">&gt;</span>
-                        mladen@stanimirovic.org
-                    </a>
-                </div>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <h3 class="skill-title">Languages</h3>
+                        <ul class="skill-list">
+                            <li>Java / Kotlin</li>
+                            <li>Python</li>
+                            <li>C / C++</li>
+                            <li>JavaScript</li>
+                            <li>GO</li>
+                            <li>SQL</li>
+                        </ul>
+                    </div>
 
-                <div class="hero__footer">
-                    <div class="muted">&gt; building things quietly</div>
+                    <div class="skill-card">
+                        <h3 class="skill-title">Backend & Systems</h3>
+                        <ul class="skill-list">
+                            <li>REST APIs</li>
+                            <li>Authentication & Authorization</li>
+                            <li>Database Design</li>
+                            <li>Computer Architecture</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-card">
+                        <h3 class="skill-title">Frontend</h3>
+                        <ul class="skill-list">
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>JavaScript</li>
+                            <li>Responsive Design</li>
+                            <li>UI Structure & Layout Systems</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-card">
+                        <h3 class="skill-title">Databases & Tools</h3>
+                        <ul class="skill-list">
+                            <li>PostgreSQL</li>
+                            <li>SQLite</li>
+                            <li>Docker</li>
+                            <li>Git & GitHub</li>
+                            <li>Linux</li>
+                        </ul>
+                    </div>
                 </div>
             </section>
 
-            <!-- PROJECTS -->
-            <section class="projects" aria-label="Projects">
-                <div class="section-title">
-                    <span class="prompt">&gt;</span> projects
+            <section class="connect">
+                <h1 class="section-title">Connect</h1>
+                <p>
+                    Feel free to contact me at
+                    <a href="mailto:mladen@stanimirovic.org"
+                        >mladen@stanimirovic.org</a
+                    >
+                </p>
+                <div class="links">
+                    <a href="https://github.com/mstanimirovic">Github</a>
+                    <a href="https://instagram.com/stanimiroviccmladen"
+                        >Instagram</a
+                    >
                 </div>
-
-                <div class="projects__list" id="projects"></div>
-
-                <div class="projects__footer"></div>
             </section>
         </main>
-
-        <script src="app.js" defer></script>
+        <footer>
+            <p>&copy; 2026</p>
+            <p>Light Theme</p>
+        </footer>
     </body>
 </html>

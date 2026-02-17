@@ -1,242 +1,160 @@
-:root {
-    --bg: #07090c;
-    --fg: #cfe9e7;
-    --muted: rgba(207, 233, 231, 0.65);
-
-    --accent: #b9fff3; /* ime / naglasci */
-    --link: #b29cff; /* github/email */
-    --link2: #8aa8ff; /* sekundarni */
-
-    --grid: rgba(255, 255, 255, 0.06);
-    --grid2: rgba(255, 255, 255, 0.035);
-
-    --max: 980px;
-    --content: 820px;
+::root {
+    --bg: #ffffff;
+    --fg: #00ff00;
 }
 
 * {
-    box-sizing: border-box;
-}
-
-html,
-body {
-    height: 100%;
-}
-
-body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--fg);
     font-family:
-        ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-        "Liberation Mono", "Courier New", monospace;
-
-    /* grid background */
-    background-image:
-        linear-gradient(to right, var(--grid2) 1px, transparent 1px),
-        linear-gradient(to bottom, var(--grid2) 1px, transparent 1px),
-        radial-gradient(closest-side, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7));
-    background-size:
-        48px 48px,
-        48px 48px,
-        100% 100%;
-    background-position: center, center, center;
+        "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans",
+        Arial, sans-serif;
 }
 
-.page {
-    min-height: 100%;
-    max-width: var(--max);
-    position: relative;
+html {
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+p,
+li,
+a {
+    color: var(--fg);
+    background-color: var(--bg);
+}
+
+body {
+    padding: 2vh 2vw;
+}
+
+header,
+main,
+footer {
+    max-width: 650px;
     margin: 0 auto;
-    padding: 72px 24px 96px;
 }
 
-/* HERO (centriran) */
-.hero {
-    text-align: center;
-    margin: 0 auto 64px;
-    max-width: 760px;
+header h1 {
+    letter-spacing: 0.03em;
 }
 
-.hero__title {
-    margin: 0 0 22px;
-    font-size: clamp(36px, 4vw, 56px);
-    letter-spacing: 0.5px;
-    color: var(--accent);
-    text-shadow:
-        0 0 18px rgba(185, 255, 243, 0.12),
-        0 0 32px rgba(185, 255, 243, 0.08);
-}
-
-.hero__meta p {
-    margin: 6px 0;
-    color: var(--muted);
-    font-size: 18px;
-    line-height: 1.35;
-}
-
-.hero__links {
-    margin-top: 26px;
+main {
     display: flex;
-    gap: 10px;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    gap: 20px;
 }
 
-.link {
-    color: var(--link);
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
     text-decoration: none;
-    display: inline-flex;
-    gap: 10px;
-    align-items: center;
-    font-size: 20px;
-    padding: 6px 10px;
-    border-radius: 8px;
+    text-transform: lowercase;
+    letter-spacing: 0.05em;
+    opacity: 0.6;
 }
 
-.link:hover {
+nav a:hover {
+    opacity: 1;
     text-decoration: underline;
-    text-underline-offset: 4px;
-}
-
-.link__arrow {
-    color: rgba(255, 255, 255, 0.45);
-}
-
-.hero__footer {
-    margin-top: 26px;
-    display: grid;
-    gap: 14px;
-    justify-items: center;
-}
-
-.muted {
-    color: rgba(185, 255, 243, 0.65);
-    font-size: 16px;
-}
-
-/* PROJECTS (left aligned, content width) */
-.projects {
-    max-width: var(--content);
-    margin: 0 auto;
-    padding-top: 28px;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .section-title {
-    color: rgba(185, 255, 243, 0.75);
-    font-size: 18px;
-    letter-spacing: 0.2px;
-    margin-bottom: 22px;
-    display: flex;
-    gap: 10px;
-    align-items: baseline;
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
 }
 
-.prompt {
-    color: rgba(185, 255, 243, 0.85);
-}
-
-.projects__list {
+.skills-grid {
     display: grid;
-    gap: 22px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+    margin-top: 18px;
 }
 
-/* “terminal card” bez teških okvira */
-.project {
-    padding: 14px 14px 16px;
+.skill-card {
+    border: 1px solid rgba(0, 0, 0, 0.08);
     border-radius: 14px;
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    backdrop-filter: blur(2px);
-    cursor: default;
+    padding: 18px;
+    background: #fff;
 }
 
-.project__head a {
-    text-decoration: none;
-    display: flex;
-    gap: 10px;
-    align-items: baseline;
-    margin-bottom: 8px;
+.skill-title {
+    margin: 0 0 12px 0;
+    font-size: 18px;
+    font-weight: 700;
 }
 
-.project__name {
-    margin: 0 0 5px 0;
-    font-size: 20px;
-    color: var(--accent);
-}
-
-.project__desc {
-    cursor: default;
-    margin: 0 0 10px;
-    color: var(--muted);
-    font-size: 16px;
-    line-height: 1.45;
-}
-
-.project__stack {
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 10px;
-    align-content: space-evenly;
-    height: fit-content;
-}
-
-.project__links {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-}
-
-.topic {
+.skill-list {
+    list-style: none;
+    padding: 0;
     margin: 0;
-    padding: 7px 10px;
-    border-radius: 999px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    background: rgba(0, 0, 0, 0.2);
-    color: rgba(207, 233, 231, 0.85);
-    text-decoration: none;
+}
+
+.skill-list li {
     font-size: 14px;
+    padding: 6px 0;
+    color: var(--fg);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-.topic:hover {
-    cursor: default;
-    border-color: rgba(185, 255, 243, 0.3);
-    color: rgba(185, 255, 243, 0.9);
+.skill-list li:last-child {
+    border-bottom: none;
 }
 
-.projects__footer {
-    margin-top: 22px;
+.links {
     display: flex;
-    gap: 10px;
-    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.1rem;
 }
 
-.link--muted {
-    color: var(--link2);
-}
+.links a {
+    padding: 0.5rem 0.7rem;
+    border-radius: 999px;
 
-.arrow {
-    font-size: 14px;
-    color: lightblue;
+    background: #f4f4f4;
+    color: #343434;
     text-decoration: none;
+
+    font-size: 0.95rem;
+    font-weight: 100;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
 }
 
-/* Mobile tuning */
-@media (max-width: 520px) {
-    .page {
-        padding: 56px 18px 80px;
+.links a:hover {
+    background: #000;
+    color: white;
+    transform: translateY(-1px);
+}
+
+footer {
+    margin-top: 5vh;
+    border-top: 1px solid #333;
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (max-width: 600px) {
+    header {
+        flex-direction: column-reverse;
     }
-    .hero__meta p {
-        font-size: 16px;
+
+    .projects {
+        grid-template-columns: 1fr;
     }
-    .link {
-        font-size: 18px;
-    }
-    .project {
-        padding: 12px;
+
+    .section-title {
+        font-size: 24px;
     }
 }
