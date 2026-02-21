@@ -81,6 +81,58 @@
 
                     <article class="project-card">
                         <div class="project-top">
+                            <h3 class="project-title">
+                                Tudu — REST API (Rust)
+                            </h3>
+
+                            <div class="project-links">
+                                <a
+                                    class="project-link"
+                                    href="https://github.com/mstanimirovic/tudu"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    >GitHub</a
+                                >
+                            </div>
+                        </div>
+
+                        <p class="project-desc">
+                            A production-oriented REST backend built with Rust
+                            and Axum. Uses JWT authentication, PostgreSQL
+                            persistence, and Docker Compose for local dev. Core
+                            resources: users, todos, and categories.
+                        </p>
+
+                        <ul class="project-tags">
+                            <li>Rust</li>
+                            <li>Axum</li>
+                            <li>PostgreSQL</li>
+                            <li>SQLx</li>
+                            <li>JWT Auth</li>
+                            <li>Docker Compose</li>
+                        </ul>
+
+                        <ul class="project-highlights">
+                            <li>
+                                Implemented JWT-based auth (register/login),
+                                request extraction, and auth middleware to
+                                protect todo/category routes.
+                            </li>
+                            <li>
+                                Designed normalized schema: <code>users</code>,
+                                <code>todos</code>, <code>categories</code> with
+                                FK constraints and cascade deletes.
+                            </li>
+                            <li>
+                                Clear REST contracts with DTOs + validation,
+                                consistent error responses, and
+                                pagination-friendly listing endpoints.
+                            </li>
+                        </ul>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-top">
                             <h3 class="project-title">Portfolio Website</h3>
                             <div class="project-links">
                                 <a
